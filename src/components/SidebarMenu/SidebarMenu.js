@@ -8,7 +8,7 @@ class SidebarMenu extends Component {
     return (
       <StyledSidebarMenu vertical>
         <Menu.Item>
-          <Input placeholder='Search...'/>
+          <Input icon='search' iconPosition='left' placeholder='Search...' transparent inverted/>
         </Menu.Item>
         <Menu.Item>
           <StyledStringIcon name='text height'/>

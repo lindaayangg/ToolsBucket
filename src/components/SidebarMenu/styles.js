@@ -13,7 +13,7 @@ export const StyledSidebarMenu = styled(Menu)`
 
 export const StyledSearchBar = styled(Input)`
   &&& {
-    background: #416B86 !important;
+    // background: #416B86 !important;
   }
 `;
 
