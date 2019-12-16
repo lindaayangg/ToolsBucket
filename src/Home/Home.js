@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import SidebarMenu from "../components/SidebarMenu/SidebarMenu";
+import {StyledHomeBodyContainer} from "./styles";
 
 class Home extends Component {
 
   render() {
     return (
       <div>
-        <SidebarMenu/>
+        <StyledHomeBodyContainer>
+          Welcome to ToolsBucket!
+        </StyledHomeBodyContainer>
       </div>
     )
   }

@@ -33,6 +33,13 @@ export const StyledCategoryTitle = styled(Menu.Header)`
   }
 `;
 
+export const StyledToolsListWrapper = styled(Menu.Menu)`
+  &&& {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
 export const StyledToolName = styled(Menu.Item)`
   &&& {
     color: rgba(255,255,255,.5) !important;
