@@ -1,27 +1,46 @@
 import React, {Component} from 'react';
-import {Menu, Sidebar} from "semantic-ui-react";
+import {Input, Menu} from "semantic-ui-react";
+import {StyledCategoryTitle, StyledName, StyledSidebarMenu, StyledStringIcon, StyledToolName} from "./styles";
+import {strings} from "../../res/strings";
 
 class SidebarMenu extends Component {
   render() {
-    const {sidebarOpen} = this.props;
-    return(
-      <Sidebar
-        as={Menu}
-        animation='overlay'
-        vertical
-        visible={sidebarOpen}
-        width='thin'
-      >
-        <Menu.Item as='a'>
-          Home
+    return (
+      <StyledSidebarMenu vertical>
+        <Menu.Item>
+          <StyledName>
+            {strings.menu.title}
+          </StyledName>
         </Menu.Item>
-        <Menu.Item as='a'>
-          Games
+        <Menu.Item>
+          <Input icon='search' iconPosition='left' placeholder='Search...' transparent inverted/>
         </Menu.Item>
-        <Menu.Item as='a'>
-          Channels
+        <Menu.Item>
+          <StyledStringIcon name='text height'/>
+          <StyledCategoryTitle>{strings.menu.strings.header}</StyledCategoryTitle>
+          <Menu.Menu>
+            <StyledToolName name={strings.menu.strings.spaceRemover}/>
+            <StyledToolName name={strings.menu.strings.extraSpaceRemover}/>
+            <StyledToolName name={strings.menu.strings.dashRemover}/>
+            <StyledToolName name={strings.menu.strings.underscoreRemover}/>
+            <StyledToolName name={strings.menu.strings.duplicateLineRemover}/>
+            <StyledToolName name={strings.menu.strings.emptyLineRemover}/>
+            <StyledToolName name={strings.menu.strings.lineBreakRemover}/>
+            <StyledToolName name={strings.menu.strings.camelCaseGenerator}/>
+            <StyledToolName name={strings.menu.strings.snakeCaseGenerator}/>
+            <StyledToolName name={strings.menu.strings.kababCaseGenerator}/>
+            <StyledToolName name={strings.menu.strings.snakeCase2CamelCase}/>
+            <StyledToolName name={strings.menu.strings.camelCase2SnakeCase}/>
+            <StyledToolName name={strings.menu.strings.stringReverser}/>
+            <StyledToolName name={strings.menu.strings.wordReverser}/>
+            <StyledToolName name={strings.menu.strings.wordSorter}/>
+            <StyledToolName name={strings.menu.strings.textLineReverser}/>
+            <StyledToolName name={strings.menu.strings.textLineSorter}/>
+            <StyledToolName name={strings.menu.strings.image2Base64Converter}/>
+            <StyledToolName name={strings.menu.strings.base642ImageConverter}/>
+          </Menu.Menu>
         </Menu.Item>
-      </Sidebar>
+      </StyledSidebarMenu>
     )
   }
 }
