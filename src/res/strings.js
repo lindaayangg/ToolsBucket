@@ -3,7 +3,12 @@ export const strings = {
     title: 'ToolsBucket',
     strings: {
       header: 'String Tools',
-      spaceRemover: 'Space Remover',
+      copyButton: 'COPY TO CLIPBOARD',
+      spaceRemover: {
+        title: 'Space Remover',
+        removeAction: 'REMOVE SPACES',
+        clearButton: 'CLEAR',
+      },
       extraSpaceRemover: 'Extra Space Remover',
       dashRemover: 'Dash Remover',
       underscoreRemover: 'Underscore Remover',
