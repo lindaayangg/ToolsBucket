@@ -11,6 +11,15 @@ export const StyledSidebarMenu = styled(Menu)`
   }
 `;
 
+export const StyledName = styled(Menu.Header)`
+  &&& {
+    color: #FFFFFF;
+    font-size: 25px !important;
+    text-align: center;
+    margin-top: 12px !important;
+  }
+`;
+
 export const StyledSearchBar = styled(Input)`
   &&& {
     // background: #416B86 !important;

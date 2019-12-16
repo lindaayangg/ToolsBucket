@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import {Input, Menu} from "semantic-ui-react";
-import {StyledCategoryTitle, StyledSidebarMenu, StyledStringIcon, StyledToolName} from "./styles";
+import {StyledCategoryTitle, StyledName, StyledSidebarMenu, StyledStringIcon, StyledToolName} from "./styles";
 import {strings} from "../../res/strings";
 
 class SidebarMenu extends Component {
   render() {
     return (
       <StyledSidebarMenu vertical>
+        <Menu.Item>
+          <StyledName>
+            {strings.menu.title}
+          </StyledName>
+        </Menu.Item>
         <Menu.Item>
           <Input icon='search' iconPosition='left' placeholder='Search...' transparent inverted/>
         </Menu.Item>

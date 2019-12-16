@@ -1,5 +1,6 @@
 export const strings = {
   menu: {
+    title: 'ToolsBucket',
     strings: {
       header: 'String Tools',
       spaceRemover: 'Space Remover',
