@@ -9,7 +9,7 @@ import {
   StyledToolName
 } from "../../res/styles";
 import {strings} from "../../res/strings";
-import {TextArea} from "semantic-ui-react";
+import {Icon, TextArea} from "semantic-ui-react";
 import {StyledForm} from "./SpaceRemoverStyles";
 import {CopyToClipboard} from "react-copy-to-clipboard";
 import Snackbar from "@material-ui/core/Snackbar";
@@ -103,7 +103,12 @@ class SpaceRemover extends Component {
               open={copied}
               autoHideDuration={2000}
               onClose={this.handleCloseSnackbar}
-              message='Copied to Clipboard!'
+              message={
+                <span id="client-snackbar">
+                  <Icon name='check circle'/>
+                  Copied to Clipboard!
+                  </span>
+              }
             />
           </StyledForm>
         </StyledToolBody>

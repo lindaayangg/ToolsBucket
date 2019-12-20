@@ -5,6 +5,7 @@ export const StyledToolContainer = styled.div`
   &&& {
     margin-left: 280px;
     padding: 30px;
+    background: #FAFAFA;
   }
 `;
 
@@ -27,6 +28,7 @@ export const StyledToolDescription = styled(Header.Subheader)`
 export const StyledToolBody = styled(Segment)`
   &&& {
     margin-top: 40px;
+    width: 65%;
   }
 `;
 
@@ -36,6 +38,7 @@ export const StyledPrimaryButton = styled(Button)`
     margin: 30px 15px;
     background: #01395E;
     color: #FFFFFF;
+    width: 40%;
     box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     &:hover {
       background: rgb(0, 39, 65);
@@ -55,6 +58,7 @@ export const StyledSecondaryButton = styled(Button)`
     margin: 30px 15px;
     background: #E0E0E0;
     color: rgba(0, 0, 0, 0.87);
+    width: 40%;
     box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     &:hover {
       background: #D5D5D5;
@@ -70,9 +74,10 @@ export const StyledSecondaryButton = styled(Button)`
 export const StyledCopyButton = styled(Button)`
   &&& {
     border-radius: 10px;
-    margin: 25px 15px 20px 15px;
+    margin: 25px 15px 10px 15px;
     background: #E0E0E0;
     color: rgba(0, 0, 0, 0.87);
+    width: 40%;
     box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     &:hover {
       background: #D5D5D5;
