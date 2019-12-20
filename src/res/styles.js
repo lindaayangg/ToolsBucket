@@ -39,11 +39,9 @@ export const StyledPrimaryButton = styled(Button)`
     background: #01395E;
     color: #FFFFFF;
     width: 40%;
-    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     &:hover {
       background: rgb(0, 39, 65);
       color: #FFFFFF;
-      box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
     }
     &:focus {
       background: #01395E;
@@ -56,17 +54,18 @@ export const StyledSecondaryButton = styled(Button)`
   &&& {
     border-radius: 10px;
     margin: 30px 15px;
-    background: #E0E0E0;
-    color: rgba(0, 0, 0, 0.87);
+    background: #FFFFFF;
+    color: #01395E;
+    border: 1.5px solid #01395E;
     width: 40%;
-    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     &:hover {
-      background: #D5D5D5;
-      box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+      background: rgb(0, 39, 65);
+      color: #FFFFFF;
+      border: 1.5px solid rgb(0, 39, 65);
     }
     &:focus {
-      background: #E0E0E0;
-      color: rgba(0, 0, 0, 0.87);
+      background: #FFFFFF;
+      color: #01395E;
     }
   }
 `;
@@ -75,17 +74,18 @@ export const StyledCopyButton = styled(Button)`
   &&& {
     border-radius: 10px;
     margin: 25px 15px 10px 15px;
-    background: #E0E0E0;
-    color: rgba(0, 0, 0, 0.87);
+    background: #FFFFFF;
+    color: #01395E;
+    border: 1.5px solid #01395E;
     width: 40%;
-    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     &:hover {
-      background: #D5D5D5;
-      box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+      background: rgb(0, 39, 65);
+      color: #FFFFFF;
+      border: 1.5px solid rgb(0, 39, 65);
     }
     &:focus {
-      background: #E0E0E0;
-      color: rgba(0, 0, 0, 0.87);
+      background: #FFFFFF;
+      color: #01395E;
     }
   }
 `;
