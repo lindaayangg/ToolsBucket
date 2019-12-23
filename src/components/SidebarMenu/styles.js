@@ -4,7 +4,7 @@ import {Icon, Input, Menu} from "semantic-ui-react";
 export const StyledSidebarMenu = styled(Menu)`
   &&& {
     height: 100vh;
-    width: 20rem !important;
+    width: 22rem !important;
     border-radius: 0;
     background: #01395E !important;
     overflow-y: auto;

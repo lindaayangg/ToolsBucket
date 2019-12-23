@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {
   StyledCopyButton,
+  StyledInputTextTitle, StyledOutputTextTitle,
   StyledPrimaryButton,
   StyledSecondaryButton,
   StyledToolBody,
@@ -61,10 +62,11 @@ class SpaceRemover extends Component {
     const {input, result, copied} = this.state;
     return (
       <StyledToolContainer>
-        <StyledToolName>{strings.menu.strings.spaceRemover.title}</StyledToolName>
+        <StyledToolName>{strings.menu.strings.spaceRemover}</StyledToolName>
         <StyledToolDescription>Description Placeholder</StyledToolDescription>
         <StyledToolBody>
           <StyledForm>
+            <StyledInputTextTitle as='h3'>{strings.tools.inputText}</StyledInputTextTitle>
             <TextArea
               placeholder='Enter String'
               rows={10}
@@ -74,13 +76,14 @@ class SpaceRemover extends Component {
             <StyledPrimaryButton
               onClick={this.handleRemoveSpace}
             >
-              {strings.menu.strings.spaceRemover.removeAction}
+              {strings.tools.strings.spaceRemover.removeAction}
             </StyledPrimaryButton>
             <StyledSecondaryButton
               onClick={this.handleClear}
             >
-              {strings.menu.strings.spaceRemover.clearButton}
+              {strings.tools.strings.spaceRemover.clearButton}
             </StyledSecondaryButton>
+            <StyledOutputTextTitle as='h3'>{strings.tools.outputText}</StyledOutputTextTitle>
             <TextArea
               placeholder='Result'
               rows={10}
@@ -92,7 +95,7 @@ class SpaceRemover extends Component {
               onCopy={this.handleCopyToClipBoard}
             >
               <StyledCopyButton>
-                {strings.menu.strings.copyButton}
+                {strings.tools.strings.copyButton}
               </StyledCopyButton>
             </CopyToClipboard>
             <Snackbar

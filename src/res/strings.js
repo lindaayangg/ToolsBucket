@@ -3,12 +3,7 @@ export const strings = {
     title: 'ToolsBucket',
     strings: {
       header: 'String Tools',
-      copyButton: 'COPY TO CLIPBOARD',
-      spaceRemover: {
-        title: 'Space Remover',
-        removeAction: 'REMOVE SPACES',
-        clearButton: 'CLEAR',
-      },
+      spaceRemover: 'Space Remover',
       extraSpaceRemover: 'Extra Space Remover',
       dashRemover: 'Dash Remover',
       underscoreRemover: 'Underscore Remover',
@@ -23,10 +18,21 @@ export const strings = {
       stringReverser: 'String Reverser',
       wordReverser: 'Word Reverser',
       wordSorter: 'Word Sorter',
-      textLineReverser:' Text Line Reverser',
+      textLineReverser: ' Text Line Reverser',
       textLineSorter: 'Text Line Sorter',
       image2Base64Converter: 'Image to Base64 Converter',
       base642ImageConverter: 'Base64 to Image Converter'
+    }
+  },
+  tools: {
+    inputText: 'Input Text',
+    outputText: 'Output Text',
+    strings: {
+      copyButton: 'COPY TO CLIPBOARD',
+      spaceRemover: {
+        removeAction: 'REMOVE SPACES',
+        clearButton: 'CLEAR',
+      },
     }
   }
 };

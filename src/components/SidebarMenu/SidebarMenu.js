@@ -8,7 +8,7 @@ class SidebarMenu extends Component {
   renderStringsMenu = () => {
     return (
       <StyledToolsListWrapper>
-        <StyledToolName as={NavLink} to="/space-remover">{strings.menu.strings.spaceRemover.title}</StyledToolName>
+        <StyledToolName as={NavLink} to="/space-remover">{strings.menu.strings.spaceRemover}</StyledToolName>
         <StyledToolName as={NavLink} to="/extra-space-remover">{strings.menu.strings.extraSpaceRemover}</StyledToolName>
         <StyledToolName as={NavLink} to="/dash-remover">{strings.menu.strings.dashRemover}</StyledToolName>
         <StyledToolName as={NavLink} to="/underscore-remover">{strings.menu.strings.underscoreRemover}</StyledToolName>

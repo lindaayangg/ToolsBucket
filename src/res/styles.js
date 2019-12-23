@@ -3,7 +3,7 @@ import {Button, Header, Segment} from "semantic-ui-react";
 
 export const StyledToolContainer = styled.div`
   &&& {
-    margin-left: 280px;
+    margin-left: 320px;
     padding: 30px;
     background: #FAFAFA;
   }
@@ -89,3 +89,18 @@ export const StyledCopyButton = styled(Button)`
     }
   }
 `;
+
+export const StyledInputTextTitle = styled(Header)`
+  &&& {
+    text-align: left;
+    color: #01395E;
+  }
+`;
+
+export const StyledOutputTextTitle = styled(Header)`
+  &&& {
+    text-align: left;
+    color: #01395E;
+  }
+`;
+
