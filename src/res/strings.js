@@ -30,6 +30,9 @@ export const strings = {
     strings: {
       copyButton: 'COPY TO CLIPBOARD',
       spaceRemover: {
+        select: 'Please select one of the following:',
+        removeIncludeLineBreaks: 'Remove all whitespaces including linebreaks',
+        removeExcludeLineBreaks: 'Remove all whitespaces excluding linebreaks',
         removeAction: 'REMOVE SPACES',
         clearButton: 'CLEAR',
       },

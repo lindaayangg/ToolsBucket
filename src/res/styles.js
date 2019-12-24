@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Button, Header, Segment} from "semantic-ui-react";
+import {Button, Header, Radio, Segment} from "semantic-ui-react";
 
 export const StyledToolContainer = styled.div`
   &&& {
@@ -9,6 +9,14 @@ export const StyledToolContainer = styled.div`
   }
 `;
 
+export const StyledToolBody = styled(Segment)`
+  &&& {
+    margin-top: 40px;
+    width: 65%;
+  }
+`;
+
+//Tools Title
 export const StyledToolName = styled(Header)`
   &&& {
     font-size: 25px;
@@ -25,13 +33,7 @@ export const StyledToolDescription = styled(Header.Subheader)`
   }
 `;
 
-export const StyledToolBody = styled(Segment)`
-  &&& {
-    margin-top: 40px;
-    width: 65%;
-  }
-`;
-
+//Buttons
 export const StyledPrimaryButton = styled(Button)`
   &&& {
     border-radius: 10px;
@@ -90,17 +92,17 @@ export const StyledCopyButton = styled(Button)`
   }
 `;
 
-export const StyledInputTextTitle = styled(Header)`
+//Titles
+export const StyledToolBodyTitle = styled(Header)`
   &&& {
     text-align: left;
     color: #01395E;
   }
 `;
 
-export const StyledOutputTextTitle = styled(Header)`
+//Radio Buttons
+export const StyledRadioButton = styled(Radio)`
   &&& {
-    text-align: left;
-    color: #01395E;
+    margin: 10px 0;
   }
 `;
-

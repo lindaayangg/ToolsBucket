@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import {
   StyledCopyButton,
-  StyledInputTextTitle, StyledOutputTextTitle,
   StyledPrimaryButton,
+  StyledRadioButton,
   StyledSecondaryButton,
   StyledToolBody,
+  StyledToolBodyTitle,
   StyledToolContainer,
   StyledToolDescription,
   StyledToolName
 } from "../../res/styles";
 import {strings} from "../../res/strings";
 import {Icon, TextArea} from "semantic-ui-react";
-import {StyledForm} from "./SpaceRemoverStyles";
+import {StyledForm, StyledRadioGroup} from "./SpaceRemoverStyles";
 import {CopyToClipboard} from "react-copy-to-clipboard";
 import Snackbar from "@material-ui/core/Snackbar";
 
@@ -28,6 +29,10 @@ class SpaceRemover extends Component {
     })
   };
 
+  handleRadioChange = (event, {value}) => {
+    this.setState({value})
+  };
+
   handleClear = () => {
     this.setState({
       input: '',
@@ -41,9 +46,17 @@ class SpaceRemover extends Component {
     })
   };
 
-  handleRemoveSpace = () => {
+  handleRemoveSpacesIncludingLineBreak = () => {
     const {input} = this.state;
     const result = input.replace(/\s/g, '');
+    this.setState({
+      result: result,
+    })
+  };
+
+  handleRemoveSpacesExcludingLineBreak = () => {
+    const {input} = this.state;
+    const result = input.replace(/[^\S\r\n]/g, '');
     this.setState({
       result: result,
     })
@@ -58,63 +71,101 @@ class SpaceRemover extends Component {
     })
   };
 
+  renderSelection = () => {
+    const {value} = this.state;
+    return (
+      <StyledToolBody>
+        <StyledForm>
+          <StyledToolBodyTitle>
+            {strings.tools.strings.spaceRemover.select}
+          </StyledToolBodyTitle>
+          <StyledRadioGroup>
+            <StyledRadioButton
+              label={strings.tools.strings.spaceRemover.removeIncludeLineBreaks}
+              name='radioGroup'
+              value='include'
+              checked={value === 'include'}
+              onChange={this.handleRadioChange}
+            />
+            <StyledRadioButton
+              label={strings.tools.strings.spaceRemover.removeExcludeLineBreaks}
+              name='radioGroup'
+              value='exclude'
+              checked={value === 'exclude'}
+              onChange={this.handleRadioChange}
+            />
+          </StyledRadioGroup>
+        </StyledForm>
+      </StyledToolBody>
+    )
+  };
+
+  renderToolBody = () => {
+    const {input, result, copied, value} = this.state;
+    return (
+      <StyledToolBody>
+        <StyledForm>
+          <StyledToolBodyTitle as='h3'>{strings.tools.inputText}</StyledToolBodyTitle>
+          <TextArea
+            placeholder='Enter String'
+            rows={10}
+            value={input}
+            onChange={this.handleTextChange}
+          />
+          <StyledPrimaryButton
+            onClick={value === "include"
+              ? this.handleRemoveSpacesIncludingLineBreak
+              : this.handleRemoveSpacesExcludingLineBreak}
+          >
+            {strings.tools.strings.spaceRemover.removeAction}
+          </StyledPrimaryButton>
+          <StyledSecondaryButton
+            onClick={this.handleClear}
+          >
+            {strings.tools.strings.spaceRemover.clearButton}
+          </StyledSecondaryButton>
+          <StyledToolBodyTitle as='h3'>{strings.tools.outputText}</StyledToolBodyTitle>
+          <TextArea
+            placeholder='Result'
+            rows={10}
+            disabled
+            value={result}
+          />
+          <CopyToClipboard
+            text={result}
+            onCopy={this.handleCopyToClipBoard}
+          >
+            <StyledCopyButton>
+              {strings.tools.strings.copyButton}
+            </StyledCopyButton>
+          </CopyToClipboard>
+          <Snackbar
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            open={copied}
+            autoHideDuration={2000}
+            onClose={this.handleCloseSnackbar}
+            message={
+              <span id="client-snackbar">
+                  <Icon name='check circle'/>
+                  Copied to Clipboard!
+                  </span>
+            }
+          />
+        </StyledForm>
+      </StyledToolBody>
+    )
+  };
+
   render() {
-    const {input, result, copied} = this.state;
     return (
       <StyledToolContainer>
         <StyledToolName>{strings.menu.strings.spaceRemover}</StyledToolName>
         <StyledToolDescription>Description Placeholder</StyledToolDescription>
-        <StyledToolBody>
-          <StyledForm>
-            <StyledInputTextTitle as='h3'>{strings.tools.inputText}</StyledInputTextTitle>
-            <TextArea
-              placeholder='Enter String'
-              rows={10}
-              value={input}
-              onChange={this.handleTextChange}
-            />
-            <StyledPrimaryButton
-              onClick={this.handleRemoveSpace}
-            >
-              {strings.tools.strings.spaceRemover.removeAction}
-            </StyledPrimaryButton>
-            <StyledSecondaryButton
-              onClick={this.handleClear}
-            >
-              {strings.tools.strings.spaceRemover.clearButton}
-            </StyledSecondaryButton>
-            <StyledOutputTextTitle as='h3'>{strings.tools.outputText}</StyledOutputTextTitle>
-            <TextArea
-              placeholder='Result'
-              rows={10}
-              disabled
-              value={result}
-            />
-            <CopyToClipboard
-              text={result}
-              onCopy={this.handleCopyToClipBoard}
-            >
-              <StyledCopyButton>
-                {strings.tools.strings.copyButton}
-              </StyledCopyButton>
-            </CopyToClipboard>
-            <Snackbar
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              open={copied}
-              autoHideDuration={2000}
-              onClose={this.handleCloseSnackbar}
-              message={
-                <span id="client-snackbar">
-                  <Icon name='check circle'/>
-                  Copied to Clipboard!
-                  </span>
-              }
-            />
-          </StyledForm>
-        </StyledToolBody>
+        {this.renderSelection()}
+        {this.renderToolBody()}
       </StyledToolContainer>
     )
   }
