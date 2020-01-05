@@ -3,8 +3,8 @@ import {Button, Header, Radio, Segment} from "semantic-ui-react";
 
 export const StyledToolContainer = styled.div`
   &&& {
-    margin-left: 320px;
-    padding: 30px;
+    margin-left: 300px;
+    padding: 30px 50px;
     background: #FAFAFA;
   }
 `;
