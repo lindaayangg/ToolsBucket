@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledHomeBodyContainer = styled.div`
   &&& {
-    margin-left: 280px;
-    padding: 30px;
+    margin-left: 300px;
+    padding: 40px 50px;
   }
 `;
