@@ -46,6 +46,15 @@ class SpaceRemover extends Component {
     })
   };
 
+  handleCloseSnackbar = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    this.setState({
+      copied: false,
+    })
+  };
+
   handleRemoveSpacesIncludingLineBreak = () => {
     const {input} = this.state;
     const result = input.replace(/\s/g, '');
@@ -62,22 +71,13 @@ class SpaceRemover extends Component {
     })
   };
 
-  handleCloseSnackbar = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    this.setState({
-      copied: false,
-    })
-  };
-
   renderSelection = () => {
     const {value} = this.state;
     return (
       <StyledToolBody>
         <StyledForm>
           <StyledToolBodyTitle>
-            {strings.tools.strings.spaceRemover.select}
+            {strings.tools.strings.select}
           </StyledToolBodyTitle>
           <StyledRadioGroup>
             <StyledRadioButton
@@ -117,12 +117,12 @@ class SpaceRemover extends Component {
               ? this.handleRemoveSpacesIncludingLineBreak
               : this.handleRemoveSpacesExcludingLineBreak}
           >
-            {strings.tools.strings.spaceRemover.removeAction}
+            {strings.tools.strings.removeAction}
           </StyledPrimaryButton>
           <StyledSecondaryButton
             onClick={this.handleClear}
           >
-            {strings.tools.strings.spaceRemover.clearButton}
+            {strings.tools.strings.clearButton}
           </StyledSecondaryButton>
           <StyledToolBodyTitle as='h3'>{strings.tools.outputText}</StyledToolBodyTitle>
           <TextArea

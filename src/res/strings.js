@@ -28,14 +28,18 @@ export const strings = {
     inputText: 'Input Text',
     outputText: 'Output Text',
     strings: {
+      select: 'Please select one of the following:',
       copyButton: 'COPY TO CLIPBOARD',
+      removeAction: 'REMOVE SPACES',
+      clearButton: 'CLEAR',
       spaceRemover: {
-        select: 'Please select one of the following:',
         removeIncludeLineBreaks: 'Remove all whitespaces including linebreaks',
         removeExcludeLineBreaks: 'Remove all whitespaces excluding linebreaks',
-        removeAction: 'REMOVE SPACES',
-        clearButton: 'CLEAR',
       },
+      extraSpaceRemover: {
+        removeIncludeLineBreaks: 'Remove all extra whitespaces including linebreaks',
+        removeExcludeLineBreaks: 'Remove all extra whitespaces excluding linebreaks',
+      }
     }
   }
 };
